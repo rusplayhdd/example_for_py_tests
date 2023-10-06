@@ -1,4 +1,6 @@
+# for make a rqst:
 import requests
+# for a job with JSON:
 import json
 
 # and certainly we need to choose the method
@@ -14,12 +16,16 @@ r_json = json.dumps(r.json(), indent=2#, ensure_ascii=False
 if r.status_code == 200:
     print("all good")
 elif r.status_code >= 400:
-    print("the page dosn't find!")
+    print("The page dosn't find!")
 else:
-    print("the code isn't 200")
+    print("The code isn't 200")
 
 
 if r.status_code == 200:
     print(r_json)
 else: 
     print("Not found, Something wrong!!!")
+
+# if we want to return the value from rqst use this:
+city_n = r.json()["name"]
+print(city_n)
