@@ -17,4 +17,3 @@ def test_body_part():
 def test_json(key, value):
     r = requests.get("https://api.hh.ru:443/metro/4/?locale=EN")
     assert r.json()[key] == value
-
